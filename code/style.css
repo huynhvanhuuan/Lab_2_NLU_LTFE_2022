@@ -1,0 +1,155 @@
+.sidebar .sidebar__main .sidebar__dashboard-icon, .sidebar .sidebar__main .sidebar__analyst-icon, .sidebar .sidebar__main .sidebar__ecommerce-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.2em;
+}
+
+body {
+  margin: 0;
+}
+
+.main {
+  height: 100vh;
+  display: block;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.row {
+  display: flex;
+}
+
+.sidebar {
+  width: 268px;
+  background: #ffffff;
+}
+.sidebar .sidebar__main {
+  padding: 10px;
+}
+.sidebar .sidebar__main .sidebar__logo {
+  display: none;
+}
+.sidebar .sidebar__main .sidebar__logo .sidebar__logo-mobile {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 10px;
+  color: #606060;
+}
+.sidebar .sidebar__main .sidebar__logo .sidebar__logo-mobile .sidebar__logo-image {
+  display: flex;
+}
+.sidebar .sidebar__main .sidebar__logo .sidebar__logo-mobile .sidebar__logo-image .sidebar__logo-image-v {
+  width: 30px;
+  height: 30px;
+}
+.sidebar .sidebar__main .sidebar__logo .sidebar__logo-mobile .sidebar__logo-image .sidebar__logo-title {
+  padding: 5px;
+  font-size: 1.5em;
+}
+.sidebar .sidebar__main .sidebar__logo .sidebar__logo-mobile .sidebar__logo-close {
+  padding: 5px;
+  font-size: 1.5em;
+}
+.sidebar .sidebar__main .sidebar__dashboard::before, .sidebar .sidebar__main .sidebar__analyst::before, .sidebar .sidebar__main .sidebar__ecommerce::before, .sidebar .sidebar__main .sidebar__marketing::before, .sidebar .sidebar__main .sidebar__sales::before, .sidebar .sidebar__main .sidebar__support::before {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 1.2em;
+}
+.sidebar .sidebar__main .sidebar__dashboard, .sidebar .sidebar__main .sidebar__analyst, .sidebar .sidebar__main .sidebar__ecommerce {
+  position: relative;
+  border-radius: 5px;
+  padding: 10px;
+  color: #606060;
+  transition: all linear 0.5s;
+}
+.sidebar .sidebar__main .sidebar__dashboard-title, .sidebar .sidebar__main .sidebar__analyst-title, .sidebar .sidebar__main .sidebar__ecommerce-title {
+  text-align: center;
+}
+.sidebar .sidebar__main .sidebar__dashboard {
+  background-color: #ececec;
+}
+.sidebar .sidebar__main .sidebar__dashboard:hover {
+  background-color: #7e72f2;
+  color: #fff;
+}
+.sidebar .sidebar__main .sidebar__analyst, .sidebar .sidebar__main .sidebar__ecommerce {
+  margin-top: 5px;
+}
+.sidebar .sidebar__main .sidebar__analyst {
+  background-color: #9e94ff;
+}
+.sidebar .sidebar__main .sidebar__analyst:hover {
+  background-color: #999999;
+}
+.sidebar .sidebar__main .sidebar__dashboard:hover, .sidebar .sidebar__main .sidebar__analyst:hover, .sidebar .sidebar__main .sidebar__ecommerce:hover {
+  padding-left: 20px;
+  color: #ffffff;
+}
+.sidebar .sidebar__main .sidebar__ecommerce:hover {
+  background-color: #7e72f2;
+}
+.sidebar .sidebar__main .sidebar__title {
+  color: #999999;
+  margin-top: 20px;
+}
+.sidebar .sidebar__main .sidebar__ui-down {
+  display: flex;
+  justify-content: space-between;
+  color: #979797;
+  border-radius: 5px;
+  transition: all linear 1s;
+}
+.sidebar .sidebar__main .sidebar__ui-down .sidebar__ui-icon {
+  padding: 10px;
+}
+.sidebar .sidebar__main .sidebar__ui-down .sidebar__ui-title {
+  padding: 10px;
+}
+.sidebar .sidebar__main .sidebar__ui-down:hover {
+  background-color: #7e72f2;
+  color: #ffffff;
+  padding-left: 20px;
+}
+.sidebar .sidebar__main .sidebar_children {
+  transition: all linear 0.3s;
+  display: none;
+  transform: translateY(-120%);
+}
+.sidebar .sidebar__main .sidebar_children li {
+  display: inline;
+}
+@keyframes dropdown_sidebar_grid {
+  0% {
+    opacity: 0;
+    transform: translateY(-120%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+.sidebar .sidebar__main .sidebar__grid-check:checked ~ .sidebar_children {
+  animation: dropdown_sidebar_grid both 0.5s;
+  transition: all linear 0.5s;
+  display: block;
+}
+.sidebar .sidebar__main .sidebar__grid-check:checked ~ .sidebar__ui-grid {
+  background-color: #7e72f2;
+  color: #ffffff;
+  border-radius: 5px;
+}
+.sidebar .sidebar__main .sidebar__grid-check:checked ~ .sidebar__ui-grid .sidebar__ui-icon {
+  display: none;
+}
+.sidebar .sidebar__main .sidebar__grid-check:checked ~ .sidebar__ui-grid .sidebar__ui-icon-down {
+  display: block;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

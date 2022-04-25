@@ -1,0 +1,192 @@
+@mixin cssSidebar {
+    border-radius: 5px;
+    padding: 10px;
+    color: #606060;
+}
+
+%sidebarIcon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+body {
+    margin: 0;
+}
+
+.main {
+    height: 100vh;
+    display: block;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.row {
+    display: flex;
+}
+
+.sidebar {
+    width: 268px;
+    background: #ffffff;
+
+    .sidebar__main {
+        padding: 10px;
+
+        .sidebar__logo {
+            display: none;
+
+            .sidebar__logo-mobile {
+                display: flex;
+                justify-content: space-between;
+                @include cssSidebar;
+
+                .sidebar__logo-image {
+                    display: flex;
+
+                    .sidebar__logo-image-v {
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    .sidebar__logo-title {
+                        padding: 5px;
+                        font-size: 1.5em;
+                    }
+                }
+
+                .sidebar__logo-close {
+                    padding: 5px;
+                    font-size: 1.5em;
+                }
+            }
+        }
+
+        .sidebar__dashboard::before, .sidebar__analyst::before, .sidebar__ecommerce::before, .sidebar__marketing::before, .sidebar__sales::before, .sidebar__support::before {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 1.2em;
+        }
+
+        .sidebar__dashboard, .sidebar__analyst, .sidebar__ecommerce {
+            position: relative;
+            @include cssSidebar();
+            transition: all linear 0.5s;
+        }
+
+        .sidebar__dashboard-title, .sidebar__analyst-title, .sidebar__ecommerce-title {
+            text-align: center;
+        }
+
+        .sidebar__dashboard-icon, .sidebar__analyst-icon, .sidebar__ecommerce-icon {
+            @extend %sidebarIcon;
+        }
+
+        .sidebar__dashboard {
+            background-color: #ececec;
+
+            &:hover {
+                background-color: #7e72f2;
+                color: #fff;
+            }
+        }
+
+        .sidebar__analyst, .sidebar__ecommerce {
+            margin-top: 5px;
+        }
+
+        .sidebar__analyst {
+            background-color: #9e94ff;
+
+            &:hover {
+                background-color: #999999;
+            }
+        }
+
+        .sidebar__dashboard:hover, .sidebar__analyst:hover, .sidebar__ecommerce:hover {
+            padding-left: 20px;
+            color: #ffffff;
+        }
+
+        .sidebar__ecommerce:hover {
+            background-color: #7e72f2;
+        }
+
+        .sidebar__title {
+            color: #999999;
+            margin-top: 20px;
+        }
+
+        .sidebar__ui-down {
+            display: flex;
+            justify-content: space-between;
+            color: #979797;
+            border-radius: 5px;
+            transition: all linear 1s;
+
+            .sidebar__ui-icon {
+                padding: 10px;
+            }
+
+            .sidebar__ui-title {
+                padding: 10px;
+            }
+
+            &:hover {
+                background-color: #7e72f2;
+                color: #ffffff;
+                padding-left: 20px;
+            }
+        }
+
+        .sidebar_children {
+            transition: all linear 0.3s;
+            display: none;
+            transform: translateY(-120%);
+
+            li {
+                display: inline;
+            }
+        }
+
+        @keyframes dropdown_sidebar_grid {
+            0% {
+                opacity: 0;
+                transform: translateY(-120%);
+            }
+
+            50% {
+                opacity: 0;
+                transform: translateY(0%);
+            }
+
+            100% {
+                transform: translateY(0%);
+            }
+        }
+
+        .sidebar__grid-check:checked ~ .sidebar_children {
+            animation: dropdown_sidebar_grid both 0.5s;
+            transition: all linear 0.5s;
+            display: block;
+        }
+
+        .sidebar__grid-check:checked ~ .sidebar__ui-grid {
+            background-color: #7e72f2;
+            color: #ffffff;
+            border-radius: 5px;
+
+            .sidebar__ui-icon {
+                display: none;
+            }
+
+            .sidebar__ui-icon-down {
+                display: block;
+                padding: 10px;
+            }
+        }
+
+
+    }
+}
